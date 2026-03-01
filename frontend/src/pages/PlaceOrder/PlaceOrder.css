@@ -1,0 +1,100 @@
+.place-order {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 100px;
+    color: #E2E8F0; /* Silver Metallic text */
+}
+
+.place-order-left {
+    width: 100%;
+    max-width: max(30%, 500px);
+}
+
+/* Heading Style - High Energy Electric Blue */
+.place-order-left .title {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #110404; /* Pure white for the heading */
+    border-left: 6px solid #e9eaeb; /* Electric Blue Industrial Strike */
+    padding-left: 15px;
+    text-shadow: 3px 3px 0px #e7ebf1, 0 0 20px rgba(236, 237, 240, 0.3);
+}
+
+/* Industrial Input Fields - Slate & Cobalt */
+.place-order-left input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px;
+    background-color: #1A202C; /* Deep Steel background */
+    border: 1px solid #2D3748;
+    border-radius: 0px; /* Sharp industrial corners */
+    color: #272525;
+    font-weight: 500;
+    outline: none;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.place-order-left input:focus {
+    border-color: #00E0FF; /* High-Voltage Cyan focus */
+    background-color: #1e2636;
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
+}
+
+.place-order-left input::placeholder {
+    color: #718096; /* Muted Slate Gray */
+}
+
+.place-order-left .multi-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.place-order-right {
+    width: 100%;
+    max-width: max(40%, 500px);
+}
+
+/* Reusing the high-visibility cart total button style - Cobalt Gradient */
+.place-order .cart-total button {
+    margin-top: 30px;
+    border: none;
+    color: #ffffff; /* White text for better contrast on blue */
+    font-weight: 950;
+    background: linear-gradient(90deg, #0056FF, #00E0FF); /* Electric Blue Gradient */
+    width: 100%;
+    padding: 15px 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); /* Aggressive Slanted Cut */
+    transition: 0.4s ease;
+}
+
+.place-order .cart-total button:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: brightness(1.2);
+    box-shadow: 0 10px 25px rgba(0, 86, 255, 0.5);
+}
+
+@media (max-width: 750px) {
+    .place-order {
+        flex-direction: column-reverse; /* Shows the total first on mobile */
+        gap: 50px;
+        padding: 0 20px;
+    }
+    .place-order-left {
+        max-width: 100%;
+    }
+    .place-order-right {
+        max-width: 100%;
+    }
+    .place-order-left .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+}

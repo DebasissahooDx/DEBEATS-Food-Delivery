@@ -1,0 +1,122 @@
+.header {
+    height: 38vw;
+    min-height: 450px;
+    margin: 30px auto;
+    /* Switched to deep slate/navy gradient */
+    background: 
+        linear-gradient(90deg, rgba(26, 32, 44, 1) 0%, rgba(26, 32, 44, 0.6) 60%, transparent 100%),
+        url('../../assets/header_img.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    /* Steel Gray Side Border */
+    border-left: 10px solid #4A5568;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 15%;
+    left: 5vw;
+    z-index: 2;
+}
+
+/* Electric Tagline */
+.header-tag {
+    color: #0056FF; /* Electric Blue */
+    font-size: max(0.9vw, 12px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* Metallic Monster Heading */
+.header-contents h2 {
+    font-weight: 950;
+    font-size: max(5.5vw, 32px);
+    text-transform: uppercase;
+    color: #E2E8F0; /* Silver White */
+    line-height: 0.85;
+    letter-spacing: -4px;
+    text-shadow: 4px 4px 0px #0056FF; /* Blue Strike Shadow */
+}
+
+/* High-Voltage "THUNDER" */
+.header-contents h2 span {
+    color: #fff;
+    display: inline-block;
+    /* Blue Electric Glow */
+    text-shadow: 
+        0 0 15px rgba(0, 86, 255, 0.8),
+        0 0 30px rgba(0, 86, 255, 0.4),
+        4px 4px 0px #002ba1;
+}
+
+/* Industrial Slate Block */
+.header-contents p {
+    color: #cbd5e0;
+    font-size: 1.1vw;
+    font-weight: 500;
+    line-height: 1.6;
+    padding: 15px 25px;
+    background: rgba(26, 32, 44, 0.9); /* Deep Steel */
+    border-right: 5px solid #0056FF; /* Blue accent edge */
+    clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 0% 100%);
+}
+
+/* Steel Strike Button */
+.header-contents button {
+    margin-top: 10px;
+    border: none;
+    padding: 1.2vw 3.5vw;
+    font-size: max(1.1vw, 14px);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #4A5568; /* Slate Gray */
+    color: white;
+    cursor: pointer;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    transition: 0.3s ease-in-out;
+}
+
+.header-contents button:hover {
+    background: #0056FF; /* Glows blue on hover */
+    color: #fff;
+    transform: scale(1.05) skewX(-5deg);
+    box-shadow: 0 0 20px rgba(0, 86, 255, 0.6);
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 750px) {
+    .header { 
+        height: 550px; 
+        border-left-width: 15px;
+        margin: 10px auto; 
+    }
+    .header-contents { 
+        max-width: 90%; 
+        bottom: 10%; 
+        left: 8vw;
+    }
+    .header-contents h2 { 
+        font-size: 11vw; 
+        letter-spacing: -1px; 
+        text-shadow: 2px 2px 0px #0056FF;
+    }
+    .header-contents p { 
+        display: none; 
+    }
+    .header-contents button { 
+        padding: 18px 45px; 
+        font-size: 16px; 
+        clip-path: none;
+        background: #0056FF; /* Solid blue for better mobile visibility */
+    }
+}

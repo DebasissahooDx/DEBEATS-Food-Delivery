@@ -1,0 +1,80 @@
+/* Container for the overall list */
+.list-add-col {
+    background-color: #0F172A; /* Midnight Industrial Base */
+    padding: 20px;
+    color: #E2E8F0; /* Silver Metallic Text */
+}
+
+/* The Grid - Clean, sharp, and high-visibility */
+.list-table-format {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border: 1px solid #2D3748; /* Dark Steel border */
+    background-color: #1A202C; /* Solid Steel Gray */
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+/* Header Row - Electric Blue Strike */
+.list-table-format.title {
+    background-color: #0F172A;
+    color: #00E0FF; /* High-Voltage Cyan Headers */
+    border-bottom: 3px solid #0056FF; /* Cobalt Blue Power Line */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+}
+
+/* Row Hover Effect */
+.list-table-format:not(.title):hover {
+    background-color: #242c3d;
+    border-color: #0056FF;
+}
+
+/* Product Image Styling */
+.list-table-format img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border: 1px solid #2D3748;
+    background: #0F172A;
+}
+
+/* Action Button (The "X" or Delete) */
+.cursor {
+    color: #FF4B4B; /* Modern Red for destructive actions */
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.cursor:hover {
+    color: #FF0000;
+    transform: scale(1.2);
+}
+
+/* Responsive Logic for Mobile Terminals */
+@media (max-width: 600px) {
+    .list-table-format {
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 15px;
+        font-size: 12px;
+        padding: 10px;
+    }
+    
+    /* Hide specific columns on mobile for better flow */
+    .list-table-format.title {
+        display: none;
+    }
+
+    /* Hide category or price if needed on small screens */
+    .list-table-format p:nth-child(3) {
+        display: none;
+    }
+}

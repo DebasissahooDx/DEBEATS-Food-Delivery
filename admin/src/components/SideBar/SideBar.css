@@ -1,0 +1,76 @@
+.sidebar {
+    width: 18%;
+    min-height: 100vh;
+    background: #000000; /* Dark Void Background */
+    border-right: 2px solid #333; /* Industrial divider */
+    font-size: max(1vw, 12px);
+    color: #ffffff;
+}
+
+.sidebar-options {
+    padding-top: 50px;
+    padding-left: 15%; /* Adjusted for better alignment */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* SHARP EDGES: Removed rounding for Monster look */
+    border: 1px solid #333;
+    border-right: 0;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #0a0a0a;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-option:hover {
+    background: #151515;
+    border-color: #ffbb00; /* Yellow hover glow */
+}
+
+/* THE MONSTER ACTIVE STATE: No more light pink background */
+.sidebar-option.active {
+    background: linear-gradient(90deg, #1a0a00, #000000);
+    border: 2px solid #ff4500; /* Magma Orange Strike */
+    border-right: 0;
+    color: #ffbb00; /* Electric Yellow Text */
+    /* Slanted Industrial Look */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 8% 50%);
+    box-shadow: -5px 0 15px rgba(255, 69, 0, 0.3);
+}
+
+.sidebar-option img {
+    width: 25px;
+    filter: invert(1); /* Makes icons white to match the theme */
+    transition: 0.3s;
+}
+
+.sidebar-option.active img {
+    filter: invert(72%) sepia(90%) saturate(1500%) hue-rotate(10deg); /* Icons glow orange */
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 80px; /* Slimmer for mobile icons */
+    }
+    .sidebar-options {
+        padding-left: 10px;
+        align-items: center;
+    }
+    .sidebar-option {
+        padding: 15px;
+        justify-content: center;
+        clip-path: none; /* Keep it simple for mobile */
+    }
+    .sidebar-option p {
+        display: none;
+    }
+}

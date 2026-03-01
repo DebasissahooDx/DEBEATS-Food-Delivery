@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    /* FIXED: Changed from 100vw to 100vh for height, and set deep midnight background */
+    min-height: 100vh;
+    background-color: #0F172A; 
+    color: #E2E8F0; /* Default Silver Metallic text for visibility */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #00E0FF; /* High-Voltage Cyan hover for all links */
+}
+
+hr {
+    border: none;
+    height: 1px;
+    /* FIXED: Industrial Slate Gray instead of light gray */
+    background-color: #2D3748; 
+    margin: 10px 0;
+}
+
+.app-content {
+    display: flex;
+    /* Ensure the content spans the full height of the terminal */
+    min-height: 100vh;
+    background-color: #0F172A;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Slightly wider gap for industrial breathing room */
+}
+
+/* Global Scrollbar - Industrial Minimalist */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2D3748;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056FF; /* Cobalt blue scroll handle on hover */
+}

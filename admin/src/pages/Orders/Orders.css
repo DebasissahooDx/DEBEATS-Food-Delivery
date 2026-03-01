@@ -1,0 +1,76 @@
+.order-item {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+    align-items: start;
+    gap: 30px;
+    /* FIXED: Cobalt Blue Strike instead of Tomato */
+    border: 1px solid #0056FF; 
+    padding: 20px;
+    margin: 30px 0px;
+    font-size: 14px;
+    background-color: #1A202C; /* Solid Steel background */
+    color: #E2E8F0; /* Silver Metallic text for visibility */
+}
+
+/* Header Text Highlights */
+.order-item-food, 
+.order-item-name {
+    font-weight: 800;
+    color: #FFFFFF; /* Pure White for primary info */
+    text-transform: uppercase;
+}
+
+.order-item-name {
+    margin-top: 30px;
+    margin-bottom: 5px;
+    color: #00E0FF; /* High-Voltage Cyan for customer names */
+}
+
+.order-item-address {
+    margin-bottom: 10px;
+    color: #cbd5e0; /* Muted Slate Gray for address */
+    line-height: 1.5;
+}
+
+/* Status Dropdown - The Power Input Style */
+.order-item select {
+    background-color: #0F172A; /* Midnight background */
+    border: 1px solid #0056FF; /* Cobalt border */
+    color: #FFFFFF;
+    width: max(10vw, 120px);
+    padding: 10px;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-item select:focus {
+    border-color: #00E0FF; /* Glow to Cyan on focus */
+}
+
+/* Order Item Image / Icon */
+.order-item img {
+    width: 50px;
+    filter: brightness(1.2); /* Enhance icon visibility */
+}
+
+@media (max-width:1000px) {
+    .order-item {
+        font-size: 12px;
+        grid-template-columns: 0.5fr 2fr 1fr;
+        padding: 15px 8px;
+        gap: 15px;
+        border-left: 5px solid #0056FF; /* Stronger accent on mobile */
+    }
+    
+    .order-item select {
+        padding: 8px;
+        font-size: 11px;
+        width: 100%;
+    }
+    
+    .order-item img {
+        width: 35px;
+    }
+}

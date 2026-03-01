@@ -1,0 +1,78 @@
+/* Container Spacing */
+.food-display {
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Industrial Header Styling */
+.food-display h2 {
+    font-size: max(2.5vw, 24px); 
+    font-weight: 950;
+    color: #161616;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    border-left: 8px solid #0056FF; 
+    padding-left: 20px;
+    text-shadow: 3px 3px 0px #f1f4f5, 6px 6px 20px rgba(0, 86, 255, 0.4);
+    animation: strikeIn 0.8s ease-out;
+}
+
+/* --- THE HIGH-DENSITY GRID --- */
+.food-display-list {
+    display: grid;
+    /* Desktop: Uses auto-fill to fit as many 180px cards as possible (8+ on wide screens) */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    margin-top: 30px;
+    gap: 20px; 
+    row-gap: 35px;
+}
+
+/* Animation for the Section Header */
+@keyframes strikeIn {
+    0% {
+        transform: translateX(-50px) skewX(-15deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) skewX(0);
+        opacity: 1;
+    }
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet / Medium Screens (approx 4-5 cards) */
+@media (max-width: 1200px) {
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* Mobile: FORCED 3-CARD ROW */
+@media (max-width: 750px) {
+    .food-display h2 {
+        font-size: 20px;
+        border-left-width: 5px;
+        padding-left: 15px;
+        text-shadow: 2px 2px 0px #f1f4f5; 
+    }
+
+    .food-display-list {
+        /* Forces exactly 3 equal columns */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 8px; /* Tight gaps for mobile density */
+        row-gap: 20px;
+    }
+}
+
+/* Extra Small Devices (Tiny screens) */
+@media (max-width: 400px) {
+    .food-display-list {
+        /* Keeps 3 columns but reduces gap further to prevent overflow */
+        gap: 5px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

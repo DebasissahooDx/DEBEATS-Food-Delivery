@@ -1,0 +1,139 @@
+.explore-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 40px 0px;
+}
+
+.explore-menu-header h1 {
+  color: #1a1a1a;
+  font-size: max(3vw, 28px);
+  font-weight: 700;
+}
+
+.explore-menu-header h1 span {
+  color: #00E0FF; /* High-Voltage Cyan Accent */
+  text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+}
+
+.explore-menu-text {
+  max-width: 70%;
+  color: #646464;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Scroll Container */
+.explore-menu-list {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+  margin: 40px 0px;
+  overflow-x: auto;
+  padding: 20px 10px;
+}
+
+.explore-menu-list::-webkit-scrollbar {
+  height: 5px;
+}
+
+.explore-menu-list::-webkit-scrollbar-thumb {
+  background: #353637; /* Gray scrollbar */
+  border-radius: 10px;
+}
+
+.explore-menu-list-item {
+  flex-shrink: 0;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* Image Wrapper for the "Monster Lift" */
+.explore-menu-list-item .img-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 5px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.explore-menu-list-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* Hover Effects */
+.explore-menu-list-item:hover .img-wrapper {
+  transform: translateY(-12px) scale(1.05);
+}
+
+.explore-menu-list-item:hover img {
+  box-shadow: 0px 15px 25px rgba(0, 71, 255, 0.2); /* Blue glow on hover */
+}
+
+.explore-menu-list-item p {
+  margin-top: 15px;
+  color: #454545;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* Active State Design - Updated to Blue/Cyan */
+.explore-menu-list-item img.active {
+  border: 5px solid #0047FF; /* Electric Blue Border */
+  padding: 3px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 71, 255, 0.4);
+}
+
+.explore-menu-list-item p.active-text {
+  color: #0047FF;
+  font-weight: 800;
+  transform: scale(1.1);
+}
+
+.explore-menu hr {
+  margin: 10px 0px;
+  height: 2px;
+  background-color: #e2e8f0; /* Gray horizontal rule */
+  border: none;
+}
+
+/* Tablet & Mobile Optimization */
+@media (max-width: 1050px) {
+  .explore-menu-text {
+    max-width: 100%;
+    font-size: 14px;
+  }
+  .explore-menu-list {
+    gap: 25px;
+  }
+  .explore-menu-list-item .img-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.search-no-results {
+  width: 100%;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.search-no-results p {
+  color: #646464;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.search-no-results span {
+  color: #00E0FF; /* High-Voltage Cyan */
+  font-weight: 700;
+}

@@ -1,0 +1,60 @@
+/* Top-level container to anchor the Steel & Blue theme */
+.home-container {
+    background-color: #eeeef3; /* Midnight Industrial Base */
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #909396; /* Silver Metallic text */
+}
+
+/* Base Fade-in for the whole page */
+.home-container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Standardized spacing for all nested components */
+.home-container > div {
+    padding-left: 8vw;
+    padding-right: 8vw;
+}
+
+/* The Header/Hero usually handles its own padding, so we reset it here */
+.home-container .header {
+    padding: 0;
+}
+
+/* Industrial Slate Dividers - Flat & Sharp */
+.home-container hr {
+    border: none;
+    height: 1px;
+    background-color: #e1e5ec; /* Dark Steel Slate */
+    margin: 40px 8vw;
+    opacity: 0.5;
+}
+
+/* Section Header Styling (Fallback for other sections) */
+.home-container h2 {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* Mobile Responsiveness for Global Home Container */
+@media (max-width: 750px) {
+    .home-container > div {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    
+    .home-container hr {
+        margin: 30px 5vw;
+    }
+}

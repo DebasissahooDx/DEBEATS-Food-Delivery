@@ -1,0 +1,183 @@
+.navbar {
+    padding: 10px 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222834; /* Industrial Deep Gray */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #0056FF; /* Electric Blue Strike */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    width: 100px;
+    transition: 0.3s;
+    filter: brightness(1.2);
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    color: #A0AEC0; /* Slate Gray */
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.navbar-menu a {
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.navbar-menu a:hover {
+    color: #00E0FF; /* Cyber Cyan */
+}
+
+.navbar-menu .active {
+    color: #00E0FF; /* Cyber Cyan for active state */
+    position: relative;
+}
+
+.navbar-menu .active::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #00E0FF;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icon-wrapper img, .navbar-search-icon img {
+    cursor: pointer;
+    width: 18px;
+    transition: 0.3s;
+    filter: invert(0.8); /* Metallic Silver icons */
+}
+
+.navbar-search-icon {
+    position: relative;
+}
+
+.navbar-search-icon .dot {
+    position: absolute;
+    min-width: 7px;
+    min-height: 7px;
+    background-color: #00E0FF; /* Cyan Notification Dot */
+    border-radius: 50%;
+    top: -5px;
+    right: -5px;
+}
+
+.nav-signin-btn {
+    background: #4A5568; /* Slate Gray */
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 7px 18px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+.nav-signin-btn:hover {
+    background: #0056FF; /* Cobalt Blue hover */
+}
+
+.navbar-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 24px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.navbar-profile:hover .profile-img {
+    border-color: #00E0FF;
+}
+
+.nav-profile-dropdown {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 15;
+    background-color: #1A202C;
+    padding: 10px 20px;
+    border: 1px solid #4A5568;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    list-style: none;
+    width: 140px;
+    top: 35px;
+}
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-profile-dropdown li p {
+    color: #E2E8F0;
+    font-size: 13px;
+    margin: 0;
+}
+
+.nav-profile-dropdown li:hover p {
+    color: #00E0FF;
+}
+
+.nav-search-container {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 4px 8px;
+    transition: 0.3s;
+}
+
+.nav-search-container.show {
+    background: rgba(45, 55, 72, 0.3);
+    border-bottom: 1px solid #00E0FF;
+}
+
+.nav-search-input {
+    width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-search-container.show .nav-search-input {
+    width: 130px;
+    padding: 0 5px;
+}
+
+@media (max-width: 1050px) {
+    .logo { width: 90px; }
+    .navbar-menu { gap: 15px; font-size: 12px; }
+}
+
+@media (max-width: 750px) {
+    .navbar-menu { display: none; }
+    .navbar { padding: 10px 5vw; }
+}

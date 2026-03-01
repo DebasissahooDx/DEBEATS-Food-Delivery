@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    /* Deep Midnight Base to match the new logo energy */
+    background-color: #4f5256; 
+    color: #E2E8F0; /* Silver Metallic text for high visibility */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s ease-in-out;
+}
+
+/* Global Link Hover - High-Voltage Cyan */
+a:hover {
+    color: #00E0FF;
+}
+
+.app {
+    width: 80%;
+    margin: auto;
+    /* Ensuring a clean fade-in for the entire terminal interface */
+    animation: fadeIn 1s ease-in;
+}
+
+/* Global Industrial Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c5c9ce;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c5cc; /* Slate Industrial Gray */
+    border: 2px solid #0F172A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056FF; /* Electric Cobalt Blue highlight */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Global Selection Color - Matching the Cyan Glow */
+::selection {
+    background-color: #0056FF;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1050px) {
+    .app {
+        width: 90%;
+    }
+}

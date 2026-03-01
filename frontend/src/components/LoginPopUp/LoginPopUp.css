@@ -1,0 +1,237 @@
+/* --- OVERLAY & BACKDROP --- */
+.login-popup {
+    position: fixed; 
+    z-index: 1001; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.9); /* Deep Midnight Blue Backdrop */
+    display: grid;
+    backdrop-filter: blur(5px); 
+}
+
+/* --- MAIN CONTAINER --- */
+.login-popup-container {
+    place-self: center;
+    width: max(23vw, 350px);
+    color: #E2E8F0; /* Silver Metallic Text */
+    background-color: #1A202C; /* Deep Steel Gray */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 35px 40px;
+    border: 1px solid #2D3748;
+    border-top: 5px solid #0056FF; /* Electric Blue Top Strike */
+    font-size: 14px;
+    animation: strikeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* --- LOGO SECTION --- */
+.login-popup-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.login-popup-logo {
+    width: 120px;
+    height: auto;
+    filter: brightness(1.2); 
+}
+
+/* --- TITLE & CLOSE ICON --- */
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2D3748; 
+    padding-bottom: 10px;
+}
+
+.login-popup-title h2 {
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #00E0FF; /* High-Voltage Cyan */
+    letter-spacing: 1px;
+}
+
+.login-popup-title img {
+    width: 18px;
+    cursor: pointer;
+    filter: invert(1);
+    transition: 0.3s;
+}
+
+.login-popup-title img:hover {
+    transform: rotate(90deg);
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(190deg); 
+}
+
+/* --- INPUT FIELDS --- */
+.login-popup-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-popup-inputs input {
+    background: #0F172A; /* Darkest Navy */
+    color: #fff;
+    outline: none;
+    border: 1px solid #2D3748;
+    border-left: 3px solid #0056FF; 
+    padding: 12px;
+    border-radius: 0px; 
+    transition: 0.3s;
+}
+
+.login-popup-inputs input:focus {
+    border-color: #00E0FF;
+}
+
+/* --- LOADING / GENERATING OTP STATE --- */
+.otp-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    border: 3px solid #0F172A;
+    border-top: 3px solid #00E0FF; /* Cyan */
+    border-right: 3px solid #0056FF; /* Electric Blue */
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.1);
+}
+
+.otp-loading p {
+    color: #00E0FF;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: italic;
+    animation: pulse 1.5s infinite;
+}
+
+/* --- OTP VERIFICATION INPUT --- */
+.otp-input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.otp-instruction {
+    font-size: 13px;
+    color: #A0AEC0;
+    line-height: 1.5;
+}
+
+.otp-instruction b {
+    color: #00E0FF;
+}
+
+.otp-display-input {
+    width: 100% !important;
+    background: #0F172A !important;
+    color: #00E0FF !important;
+    border: 1px solid #2D3748 !important;
+    border-bottom: 4px solid #0056FF !important;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 12px;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 12px;
+}
+
+/* --- BUTTON STYLING --- */
+.login-popup-container button {
+    border: none;
+    padding: 15px;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    background: linear-gradient(90deg, #0056FF, #00E0FF);
+    cursor: pointer;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    transition: 0.3s ease;
+}
+
+.login-popup-container button:hover:not(:disabled) {
+    filter: brightness(1.2);
+    transform: scale(1.02);
+}
+
+.login-popup-container button:disabled {
+    background: #2D3748;
+    color: #718096;
+    cursor: not-allowed;
+    clip-path: none;
+    filter: grayscale(1);
+}
+
+/* --- FOOTER & SWITCH LINKS --- */
+.login-popup-condition {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin-top: -5px;
+    color: #718096;
+}
+
+.login-popup-condition input {
+    accent-color: #0056FF;
+    margin-top: 3px;
+}
+
+.login-popup-switch {
+    text-align: center;
+    color: #E2E8F0;
+}
+
+.login-popup-switch p span {
+    color: #00E0FF;
+    font-weight: 800;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-popup-switch p span:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00E0FF;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes strikeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}

@@ -1,0 +1,129 @@
+.add {
+    width: 70%;
+    margin-left: max(5vw, 25px);
+    margin-top: 50px;
+    color: #E2E8F0; /* Silver Metallic Text for high visibility */
+    font-weight: 600;
+}
+
+.add form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+}
+
+/* Upload Area - The Blue Power Source */
+.add-img-upload p {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00E0FF; /* High-Voltage Cyan heading */
+}
+
+.add-img-upload img {
+    width: 120px;
+    cursor: pointer;
+    border: 2px dashed #0056FF; /* Electric Cobalt border */
+    padding: 10px;
+    background: #0F172A; /* Midnight Navy base */
+    transition: 0.3s;
+}
+
+.add-img-upload img:hover {
+    border-style: solid;
+    border-color: #00E0FF; /* Cyan glow on hover */
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
+    transform: scale(1.02);
+}
+
+/* Product Inputs - Industrial Blocks */
+.add-product-name, 
+.add-product-description {
+    width: max(40%, 280px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Ensuring labels are visible */
+.add-product-name p,
+.add-product-description p,
+.add-category p,
+.add-price p {
+    color: #00E0FF; 
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.add-product-name input, 
+.add-product-description textarea {
+    padding: 12px;
+    background-color: #0F172A; /* Deep Navy background */
+    border: 1px solid #2D3748;
+    border-left: 4px solid #0056FF; /* Cobalt Strike */
+    color: #FFFFFF; /* Pure White text for visibility */
+    outline: none;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.add-product-name input:focus, 
+.add-product-description textarea:focus {
+    border-color: #00E0FF;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+/* Category & Price - High Velocity Grid */
+.add-category-price {
+    display: flex;
+    gap: 30px;
+}
+
+.add-category-price select, 
+.add-category-price input {
+    width: 150px;
+    padding: 12px;
+    background-color: #0F172A;
+    border: 1px solid #2D3748;
+    color: #FFFFFF; /* Visible text */
+    outline: none;
+    transition: 0.3s;
+}
+
+.add-category-price select:focus, 
+.add-category-price input:focus {
+    border-color: #0056FF;
+}
+
+/* The Monster Button - Cobalt to Cyan Gradient */
+.add-btn {
+    max-width: 160px;
+    border: none;
+    padding: 15px;
+    background: linear-gradient(90deg, #0056FF, #00E0FF);
+    color: #FFFFFF; /* High contrast white text */
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    /* Slanted Industrial Shape */
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.add-btn:hover {
+    transform: scale(1.1) skewX(-5deg);
+    box-shadow: 0 0 20px rgba(0, 86, 255, 0.6);
+}
+
+@media (max-width: 600px) {
+    .add {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .add-category-price {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
